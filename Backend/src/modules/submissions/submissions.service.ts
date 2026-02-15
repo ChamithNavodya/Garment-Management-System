@@ -1,8 +1,8 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 import { CreateTaskSubmissionDto } from '../tasks/dto/task.dto';
-import { Prisma } from '../../generated/client';
-import type { Employee, TaskType } from '../../generated/client';
+import { Prisma } from '@prisma/client';
+import type { Employee, TaskType } from '@prisma/client';
 
 const submissionWithDetails = {
   employee: true,

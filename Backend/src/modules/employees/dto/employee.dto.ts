@@ -9,11 +9,7 @@ import {
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';
-import {
-  EmployeeType,
-  EmployeeStatus,
-  Gender,
-} from '../../../generated/client';
+import { EmployeeType, EmployeeStatus, Gender } from '@prisma/client';
 
 export class SalaryConfigDto {
   @IsNumber()
