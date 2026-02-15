@@ -1,0 +1,48 @@
+# Dependencies
+**/node_modules
+**/.pnp
+**/.pnp.*
+
+# Build outputs
+**/dist
+**/build
+**/.next
+**/out
+**/*.tsbuildinfo
+
+# Logs
+**/logs
+**/*.log
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/.pnpm-debug.log*
+
+# Environment files
+**/.env
+**/.env.local
+**/.env.development.local
+**/.env.test.local
+**/.env.production.local
+**/.env*
+
+# OS and IDE files
+.DS_Store
+**/.DS_Store
+**/*.pem
+**/.idea
+**/.vscode
+**/*.sublime-workspace
+**/node_modules
+
+# Prisma
+**/generated/prisma
+
+# Vercel
+.vercel
+**/.vercel
+
+# Other
+**/.cache
+**/.tmp
+**/.temp

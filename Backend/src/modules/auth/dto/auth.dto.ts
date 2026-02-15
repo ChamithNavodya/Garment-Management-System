@@ -1,0 +1,24 @@
+import { IsEmail, IsString, MinLength, IsNotEmpty } from 'class-validator';
+
+export class LoginDto {
+  @IsEmail()
+  @IsNotEmpty()
+  email: string;
+
+  @IsString()
+  @MinLength(6)
+  @IsNotEmpty()
+  password: string;
+}
+
+export class ChangePasswordDto {
+  @IsString()
+  @MinLength(6)
+  @IsNotEmpty()
+  currentPassword: string;
+
+  @IsString()
+  @MinLength(6)
+  @IsNotEmpty()
+  newPassword: string;
+}
