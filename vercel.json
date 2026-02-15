@@ -1,0 +1,22 @@
+{
+  "builds": [
+    {
+      "src": "Frontend/package.json",
+      "use": "@vercel/next"
+    },
+    {
+      "src": "Backend/api/index.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "Backend/api/index.ts"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "Frontend/$1"
+    }
+  ]
+}
