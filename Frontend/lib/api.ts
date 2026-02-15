@@ -30,7 +30,7 @@ api.interceptors.response.use(
   (error) => {
     if (error.response?.status === 401) {
       localStorage.removeItem("accessToken");
-      localStorage.removeItem("user");
+      localStorage.removeItem("auth-storage"); // Clear Zustand's persisted state
       window.location.href = "/login";
     }
     return Promise.reject(error);
