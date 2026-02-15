@@ -10,10 +10,10 @@ async function bootstrap() {
   app.use(morgan('dev'));
 
   // Enable CORS
-  app.enableCors({
-    origin: true,
-    credentials: true,
-  });
+  // app.enableCors({
+  //   origin: true,
+  //   credentials: true,
+  // });
 
   // Global validation pipe
   app.useGlobalPipes(

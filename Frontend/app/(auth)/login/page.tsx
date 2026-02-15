@@ -49,7 +49,7 @@ export default function LoginPage() {
           <h1 className="text-3xl font-bold text-gray-900">
             Garment Management
           </h1>
-          <p className="text-gray-600 mt-2">Sign in to your account</p>
+          <p className="text-gray-600 mt-2">Sign in to your account v2</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">

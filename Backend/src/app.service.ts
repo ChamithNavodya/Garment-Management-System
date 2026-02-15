@@ -13,7 +13,7 @@ export class AppService {
     try {
       await this.prisma.$queryRaw`SELECT 1`;
       return {
-        status: 'ok',
+        status: 'ok v2',
         database: 'connected',
         timestamp: new Date().toISOString(),
       };
