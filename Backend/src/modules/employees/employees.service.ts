@@ -11,7 +11,7 @@ import {
   EmployeeStatus,
   SalaryConfig,
   type Employee,
-} from '@prisma/client';
+} from '../../generated/client';
 
 @Injectable()
 export class EmployeesService {
