@@ -18,7 +18,9 @@ const bootstrap = async (expressInstance: express.Express) => {
 
   // Enable CORS
   app.enableCors({
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+    origin: [process.env.FRONTEND_URL, 'http://localhost:3000'].filter(
+      Boolean,
+    ) as string[],
     credentials: true,
   });
 
