@@ -37,6 +37,7 @@
 
 # Prisma
 **/generated/prisma
+Backend/src/generated
 
 # Vercel
 .vercel

@@ -8,6 +8,8 @@ import { TasksModule } from './modules/tasks/tasks.module';
 import { SubmissionsModule } from './modules/submissions/submissions.module';
 import { PayrollModule } from './modules/payroll/payroll.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 
 @Module({
   imports: [
@@ -22,11 +24,13 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
     PayrollModule,
     DashboardModule,
   ],
+  controllers: [AppController],
   providers: [
     {
       provide: APP_PIPE,
       useClass: ValidationPipe,
     },
+    AppService,
   ],
 })
 export class AppModule {}

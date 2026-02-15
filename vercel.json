@@ -1,0 +1,28 @@
+{
+  "builds": [
+    {
+      "src": "Frontend/package.json",
+      "use": "@vercel/next"
+    },
+    {
+      "src": "Backend/api/index.ts",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          "Backend/prisma/**",
+          "Backend/node_modules/.prisma/client/libquery_engine-*"
+        ]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "Backend/api/index.ts"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "Frontend/$1"
+    }
+  ]
+}
