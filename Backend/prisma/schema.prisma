@@ -62,8 +62,44 @@ model Employee {
   submissions    TaskSubmission[]
   completedTasks CompletedTask[]
   payrolls       Payroll[]
+  attendance     Attendance[]
 
   @@map("employees")
+}
+
+// ... existing enums ...
+
+// =============================================
+// ATTENDANCE MANAGEMENT
+// =============================================
+
+model Attendance {
+  id          String           @id @default(uuid())
+  employeeId  String
+  date        DateTime         @db.Date
+  arrivalTime String? // HH:mm format
+  leftTime    String? // HH:mm format
+  otPrice     Decimal?         @default(0) @db.Decimal(10, 2)
+  status      AttendanceStatus @default(PRESENT)
+  notes       String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relationships
+  employee Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+
+  @@unique([employeeId, date])
+  @@index([employeeId])
+  @@index([date])
+  @@map("attendance")
+}
+
+enum AttendanceStatus {
+  PRESENT
+  ABSENT
+  LATE
+  LEAVE
 }
 
 enum Gender {
