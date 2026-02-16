@@ -6,10 +6,13 @@ import { Pool } from 'pg';
 @Injectable()
 export class PrismaService
   extends PrismaClient
-  implements OnModuleInit, OnModuleDestroy
-{
+  implements OnModuleInit, OnModuleDestroy {
   constructor() {
-    const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+    const databaseUrl = process.env.DATABASE_URL || '';
+    const pool = new Pool({
+      connectionString: databaseUrl,
+      ssl: databaseUrl.includes('sslmode=require') ? { rejectUnauthorized: false } : false
+    });
     const adapter = new PrismaPg(pool);
     super({ adapter });
   }
